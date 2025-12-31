@@ -1,0 +1,125 @@
+id: carving_stage_5
+version: 1.0
+title: "Stage 5 - Final Evaluation, Aftercare & Long Recovery"
+
+position_in_workflow:
+  after: carving_stage_4
+  before: carving_stage_6
+
+role:
+  - freeze final carving outcome (no new design decisions)
+  - verify structural + biological safety
+  - run recovery protocol and document baseline for future refinement
+
+core_rule:
+  - no_more_carving: "STOP all carving immediately after Stage 5 sign-off"
+  - no_new_features: "do not add new hollows, new openings, new shari paths, or new jin concepts"
+
+success_criteria:
+  must_pass:
+    - live_vein_intact: true
+    - branches_unchanged: "no branch removal or repositioning in this stage"
+    - hollow_reads_as_natural_decay: true
+    - no_artificial_symmetry: true
+    - outer_silhouette_not_damaged: true
+    - transitions_respect_live_dead_boundary: true
+  desired:
+    - wall_thickness_irregular: true
+    - internal_bridges_preserved: true
+    - grain_followed: true
+
+evaluation_checklist:
+  visual_checks:
+    - "Step back 2–3 meters: does the hollow follow trunk movement (not straight tunnels)?"
+    - "Check from 3 angles: are openings believable and not evenly spaced?"
+    - "Confirm shari/jin flow aligns with trunk narrative from Stage 4"
+    - "Confirm outer silhouette was not thinned or flattened by accident"
+  tactile_checks:
+    - "Finger test: edges are softened (no razor edges that look 'carved')"
+    - "Probe gently: no thin 'paper walls' that feel fragile"
+  live_tissue_warning_signs:
+    stop_if_any:
+      - "moist, bright-green cambium appears where it shouldn't"
+      - "sap bleed / wet tissue"
+      - "fresh tearing at live/dead boundary"
+      - "cracking sound from structural bridges"
+
+tools_allowed:
+  - nylon_brush_soft
+  - hand_brush
+  - compressed_air_or_pump_blower
+  - tweezers
+  - soft_paintbrush
+  - isopropyl_wipe_for_tools_only
+
+tools_forbidden:
+  - dremel
+  - carbide_burr_any
+  - sanding_drum
+  - flame_burr
+  - drill_bits
+  - aggressive_gouges
+  - wire_brush_hard
+  - torch
+
+cleaning_protocol:
+  goal: "remove dust, reveal true contours, avoid polishing"
+  steps:
+    - "Dry brush and blow out all cavities (inside-first)."
+    - "Use soft brush to clear pockets; avoid scrubbing live vein."
+    - "Do NOT use water jet or pressure wash."
+    - "Do NOT over-brush until wood becomes shiny."
+
+deadwood_protection:
+  timing: "apply only after the surface is fully dry and the tree is stable"
+  allowed_options:
+    - option_a: "lime sulfur (traditional deadwood preservative) - light application"
+    - option_b: "specialized deadwood hardener (if wood is soft/crumbly)"
+  rules:
+    - "Never apply preservative onto live vein or buds."
+    - "If uncertain where live tissue is: do NOT apply; postpone."
+    - "Keep appearance matte and natural—avoid glossy coatings."
+
+recovery_plan:
+  stage_name: "Recovery Phase (No carving for months)"
+  minimum_no_carving_period_months: 3
+  immediate_48h:
+    - "Place in bright shade / no harsh midday sun."
+    - "Protect from strong wind (reduces desiccation)."
+    - "Normal watering routine; do not overwater as a reaction."
+  weeks_1_4:
+    - "No wiring, no repotting, no heavy pruning."
+    - "Monitor leaf turgor and new growth; log weekly photos."
+    - "If heat wave: increase shade + humidity management."
+  weeks_4_12:
+    - "If vigorous growth returns, begin only light maintenance pruning."
+    - "Still no carving. Focus on health + stabilization."
+
+documentation_required:
+  photo_set:
+    - "Front (chosen design angle)"
+    - "Left 45°"
+    - "Right 45°"
+    - "Back"
+    - "Top-down"
+    - "Close-up: all openings"
+    - "Close-up: live/dead boundary zones"
+  notes_template:
+    - "Date"
+    - "What was changed in Stage 4 (summary)"
+    - "What was explicitly NOT changed"
+    - "Any risk zones observed"
+    - "Recovery conditions (sun/wind/water)"
+    - "Next review date"
+
+sign_off_gate:
+  pass_conditions:
+    - "All must_pass success_criteria are true"
+    - "No live_tissue_warning_signs triggered"
+    - "Full documentation captured"
+  if_fail:
+    - "Stop, do not 'fix' with more carving. Move to recovery and reassess after 2–4 weeks."
+
+next_stage_hint:
+  stage_6_goal: "Long-term refinement planning (future seasons), not execution"
+  note: "Stage 6 exists to plan future micro-refinement only after strong recovery, never immediately."
