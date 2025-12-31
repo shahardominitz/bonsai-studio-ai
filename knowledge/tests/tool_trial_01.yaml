@@ -1,0 +1,13 @@
+trial_id: tool_trial_01
+input_type: single_image
+image_source: user_uploaded_reference
+tree_type: conifer
+species_assumption: juniper_like
+goal: full_carving_workflow_validation
+allowed_output:
+  - photorealistic_design_visualization
+  - design_validation_notes
+forbidden_output:
+  - new_design_concepts
+  - fantasy_elements
+  - impossible_growth
