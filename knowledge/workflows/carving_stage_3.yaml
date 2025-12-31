@@ -1,0 +1,117 @@
+Prompt Name: OLIVE CARVING — Stage 3: Secondary Shaping & Flow Definition
+Version: 3.0
+File: knowledge/workflows/carving_stage_3.yaml
+id: carving_stage_3
+version: "3.0"
+title: "Stage 3 — Secondary Shaping & Flow Definition"
+tree_type: broadleaf
+applicable_species:
+  - olive
+
+position_in_workflow:
+  after: carving_stage_2
+  before: carving_stage_5
+
+stage_goal:
+  - translate internal boundary limits into a readable exterior flow
+  - refine the hollow into a natural, asymmetrical decay narrative
+  - preserve structural bridges and uneven wall thickness
+  - prepare surfaces for later aging/finishing (NOT final polish)
+
+session_plan:
+  intensity: light_to_medium
+  sessions:
+    - session_length_minutes: 20-30
+      max_sessions_in_stage: 2
+      mandatory_rest_days_after_each_session: "10-14"
+  stop_conditions:
+    - "If moist/live tissue appears anywhere in the hollow"
+    - "If outer silhouette begins to thin or flatten"
+    - "If the wall thickness becomes uniform or symmetric"
+    - "If tool heat builds up (wood feels hot to touch)"
+
+tools_primary:
+  - tool: dremel_or_rotary_tool
+    speed_guideline_rpm: "low-medium (avoid heat buildup)"
+    notes:
+      - "Use short passes, frequent pauses"
+      - "Brush away dust often to read grain and depth"
+
+bits_and_attachments:
+  shaping_bits:
+    - bit: carbide_burr_ball
+      use_for:
+        - "softly rounding transitions inside the hollow"
+        - "breaking straight lines into organic undulations"
+      avoid:
+        - "do not use near live vein edges"
+        - "do not create symmetric scoops"
+    - bit: carbide_burr_taper
+      use_for:
+        - "defining flow direction and narrowing channels"
+        - "creating irregular 'tear' edges and depth variation"
+      avoid:
+        - "do not drill straight tunnels"
+        - "do not chase depth toward live vein"
+    - bit: carbide_burr_flame_or_egg
+      use_for:
+        - "sculpting natural-looking folds and inner ridges"
+        - "introducing 'age waves' that follow trunk movement"
+      avoid:
+        - "do not smooth everything (keep texture)"
+        - "do not touch branch collars/bases"
+  finishing_pre_bits_not_final:
+    - bit: nylon_brush_attachment
+      use_for:
+        - "cleaning the hollow to reveal grain"
+        - "softly blending tool marks without polishing"
+      avoid:
+        - "do not erase all texture"
+    - bit: fine_sanding_drum_optional
+      grit: "180-240"
+      use_for:
+        - "only to soften sharp, unnatural edges"
+        - "only on deadwood (never on live tissue)"
+      avoid:
+        - "no broad sanding; no uniform surfaces"
+        - "no smoothing the 'story' out of the wood"
+
+protected_zones_do_not_touch:
+  - "outer trunk silhouette (keep original outline)"
+  - "live vein corridor (buffer zone along suspected sap path)"
+  - "branch bases / collars / swelling at attachment points"
+  - "structural bridges (internal ribs holding strength)"
+  - "any area that shows moisture, green cambium, or flexible tissue"
+
+rules_of_form:
+  - "Work from inside outward — do not thin exterior walls to achieve depth"
+  - "Hollow must follow trunk movement (flow), never straight vertical tunnels"
+  - "Maintain uneven wall thickness: thick + irregular reads natural"
+  - "Avoid symmetry: no mirrored openings, no repeated shapes"
+  - "Leave 'islands' and ribs: natural decay leaves structure behind"
+
+deliverables_end_of_stage:
+  - "Clear readable flow line through the hollow (visual path)"
+  - "No straight tunnels; no widened area toward live vein"
+  - "Outer silhouette unchanged"
+  - "Texture reads as natural decay (not decorative carving)"
+  - "Photos taken from same angle for tracking before next stage"
+
+documentation_required:
+  photos:
+    - "Front chosen design angle (same distance/height each time)"
+    - "45-degree left"
+    - "45-degree right"
+    - "Top-down into hollow"
+  notes:
+    - "What changed (exact areas)"
+    - "Which bit used and why"
+    - "Any moisture/heat events (if yes, stop and extend rest)"
+
+handoff_to_stage_5:
+  prerequisite_checklist:
+    - "Live vein intact"
+    - "Branch bases untouched"
+    - "Hollow depth and borders consistent with Stage 2 limits"
+    - "Walls thick and irregular"
+    - "Tree shows no stress signs after rest window"
