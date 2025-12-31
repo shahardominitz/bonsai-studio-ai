@@ -1,0 +1,61 @@
+id: carving_stage_1_5
+version: 1.0
+title: "Stage 1.5 – Internal Boundary Definition"
+tree_type: conifer
+applicable_species:
+  - juniper
+  - cypress
+  - thuja
+
+position_in_workflow:
+  before: carving_stage_2
+  after: carving_stage_1
+
+purpose:
+  - define final hollow limits
+  - protect live veins
+  - prevent structural failure
+
+tools_allowed:
+  - dremel
+  - large_cylindrical_carbide_burr
+  - flame_burr
+  - pencil
+  - chalk
+
+tools_forbidden:
+  - chainsaw
+  - aggressive chisels
+  - sanding drums
+
+rules:
+  do_not:
+    - touch_outer_silhouette
+    - widen_hollow_toward_live_vein
+    - create_straight_tunnels
+    - thin_wall_symmetrically
+
+method:
+  approach: "work from inside outward"
+  carving_direction: "follow trunk movement"
+  wall_thickness: "uneven, organic, thick"
+  internal_bridges: "must remain intact"
+
+time_constraints:
+  session_length_minutes: 20-30
+  max_sessions: 2
+  mandatory_rest_days_after: 7-10
+
+visual_logic:
+  hollow_reads_as: "natural decay"
+  carving_texture: "rough, torn, non-decorative"
+  asymmetry: required
+
+failure_conditions:
+  - live_tissue_exposed
+  - hollow breaches silhouette
+  - structural column removed
+
+notes:
+  - mistakes at this stage are irreversible
+  - stop immediately if moisture appears
