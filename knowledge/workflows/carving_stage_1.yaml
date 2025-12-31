@@ -1,0 +1,53 @@
+position_in_workflow:
+  before: carving_stage_1_5
+id: carving_stage_1
+version: 1.0
+title: "Stage 1 – Entry Planning & Internal Access"
+tree_type: conifer
+applicable_species:
+  - juniper
+  - cypress
+  - thuja
+
+position_in_workflow:
+  before: carving_stage_1_5
+
+purpose:
+  - define entry points
+  - establish internal access paths
+  - avoid damage to live veins
+  - prepare structure for controlled hollowing
+
+tools_allowed:
+  - drill
+  - small_round_carbide_burr
+  - pencil
+  - chalk
+
+tools_forbidden:
+  - chainsaw
+  - large_aggressive_burrs
+  - sanding_drums
+
+rules:
+  do_not:
+    - touch_outer_silhouette
+    - drill_into_live_vein
+    - connect cavities yet
+    - enlarge openings for aesthetics
+
+method:
+  drilling_strategy: "multiple small entry holes"
+  depth_control: "shallow, exploratory"
+  direction: "follow trunk movement"
+  visibility_goal: "functional, not visual"
+
+time_constraints:
+  session_length_minutes: 20-30
+  max_sessions: 2
+  mandatory_rest_days_after: 5-7
+
+visual_logic:
+  openings_read_as: "natural decay origins"
+  symmetry: forbidden
+  intention: "structural access only"
