@@ -1,0 +1,59 @@
+id: carving_stage_4
+version: 1.0
+title: "Stage 4 – Controlled Execution & Carving Strategy"
+
+position_in_workflow:
+  after: carving_stage_3
+  before: carving_stage_5
+
+role:
+  translate narrative and structural logic into physical carving actions
+  without introducing new design decisions
+
+core_principle:
+  execution must obey narrative, not improve it
+
+execution_order:
+  - stabilize tree and confirm planting angle
+  - mark no-touch zones physically (chalk or pencil)
+  - rough carving only in pre-approved deadwood zones
+  - pause before any transition area between live and dead tissue
+
+carving_depth_control:
+  max_material_removal_per_session: "minimal to moderate"
+  guideline: "always leave more than you think you need"
+  irreversible_cut_policy: "one per session maximum"
+
+tool_usage_logic:
+  allowed:
+    - carbide_burr_small
+    - hand_gouge
+    - wire_brush_soft
+  restricted:
+    - power_tools_high_rpm
+    - sanding_drums
+  forbidden:
+    - chainsaw
+    - aggressive hollowing
+
+decision_checkpoints:
+  before_deepening_hollows:
+    question: "Does this deepen the story or just add drama?"
+  before_removing_structural_bridge:
+    question: "Is this bridge part of the survival logic?"
+  before_smoothing:
+    question: "Is refinement appropriate at this stage?"
+
+stop_conditions:
+  - live_vein_thickness_feels_compromised
+  - loss_of_directional_flow
+  - fatigue_or_rush_detected
+
+output_of_stage:
+  - clearly readable deadwood narrative
+  - intact live vein hierarchy
+  - unfinished texture accepted and preserved
+
+handoff_to_next_stage:
+  focus: refinement, aging, and visual continuity
+  condition: only after rest period and reassessment
