@@ -1,0 +1,172 @@
+id: carving_stage_2
+version: 1.0
+title: "Stage 2 – Internal Hollow Routing & Structural Bridges (Controlled Aggressive Removal)"
+tree_type: conifer
+applicable_species:
+  - juniper
+  - cypress
+  - thuja
+
+position_in_workflow:
+  after: carving_stage_1_5
+  before: carving_stage_3
+
+purpose:
+  - connect entry holes into a single internal cavity system
+  - remove bulk internally to reduce visual mass while preserving outer silhouette
+  - define structural bridges and uneven wall thickness
+  - set irreversible carving limits before refinement shaping
+
+inputs_required:
+  from_previous_stages:
+    - stage_1_entry_points_exist: true
+    - stage_1_5_stop_boundaries_marked: true
+    - live_vein_safe_zone_confirmed: true
+
+tools_allowed:
+  power_tools:
+    - dremel_rotary_tool
+    - drill
+  burrs_and_bits:
+    - large_cylindrical_carbide_burr
+    - flame_carbide_burr
+    - tapered_carbide_burr
+    - long_shank_ball_carbide_burr
+  hand_tools:
+    - concave_hand_gouge_small
+    - jin_knife
+    - wire_brush_hand
+  marking_tools:
+    - pencil
+    - chalk
+    - masking_tape
+
+tools_forbidden:
+  - chainsaw
+  - angle_grinder
+  - sanding_drums
+  - flap_wheels
+  - aggressive_chisels_heavy
+  - straight_router_bits_for_tunnels
+
+rpm_and_control:
+  dremel_rpm_range:
+    soft_wood_or_pith: 8000-12000
+    hard_deadwood: 12000-18000
+  pressure_rule: "light pressure only; let the burr cut"
+  heat_rule: "if wood smells burnt or darkens rapidly -> stop, cool, reassess"
+
+safety_and_tree_health:
+  mandatory_ppe:
+    - eye_protection
+    - respirator_mask_p2_or_better
+    - hearing_protection
+    - gloves_optional_but_recommended
+  stop_immediately_if:
+    - moist_tissue_visible: true
+    - sap_or_wet_fibers_appear: true
+    - live_vein_edge_thinning_detected: true
+    - crack_sound_or_movement: true
+
+critical_rules:
+  do_not:
+    - touch_outer_silhouette
+    - widen_hollow_toward_live_vein
+    - create_straight_tunnels
+    - make_wall_thickness_even_or_symmetrical
+    - remove_branch_bases_or_change_branch_positions
+    - open_aesthetic_windows_yet
+  must_do:
+    - work_from_inside_outward
+    - follow_trunk_movement
+    - keep_internal_bridges
+    - keep_walls_thick_and_irregular
+
+stage_2_core_method:
+  step_sequence:
+    - step: "2.1 – Re-mark STOP boundaries"
+      goal: "refresh Stage 1.5 boundaries before material removal"
+      tools:
+        - pencil
+        - chalk
+        - masking_tape
+      checks:
+        - "STOP boundary visible from 2 angles"
+        - "live vein zone marked and untouched"
+      duration_minutes: 10-15
+
+    - step: "2.2 – Connect entry holes (routing path)"
+      goal: "link drilled holes into a continuous internal cavity"
+      tools:
+        - flame_carbide_burr
+        - tapered_carbide_burr
+      technique:
+        - "short passes, connect holes gradually"
+        - "avoid straight-line routing; create wandering organic path"
+      stop_signs:
+        - "approaching STOP line"
+        - "inner wall becomes thin"
+      duration_minutes: 15-25
+
+    - step: "2.3 – Bulk removal (internal only)"
+      goal: "remove mass from the inside while preserving external silhouette"
+      tools:
+        - large_cylindrical_carbide_burr
+        - long_shank_ball_carbide_burr
+      technique:
+        - "hollow follows trunk movement; never a straight tube"
+        - "leave ribs/bridges every 3–6 cm (visual guideline) where structure needs strength"
+        - "uneven wall thickness: thick near live vein, variable elsewhere"
+      stop_signs:
+        - "wood flex"
+        - "hot spot / burning smell"
+        - "approaching live vein zone"
+      duration_minutes: 20-30
+
+    - step: "2.4 – Bridge & wall logic check (pause checkpoint)"
+      goal: "ensure structural stability and final-limit definition"
+      tools:
+        - flashlight
+        - pencil
+      checks:
+        - "at least 2 structural bridges remain"
+        - "no thinning near live vein"
+        - "walls remain thick + irregular"
+        - "outer silhouette unchanged"
+      decision:
+        continue_if_all_checks_pass: true
+        stop_and_rest_if_any_check_fails: true
+      duration_minutes: 5-10
+
+deliverable_of_stage_2:
+  what_success_looks_like:
+    - "connected internal cavity (not decorative)"
+    - "outer trunk silhouette unchanged"
+    - "internal flow follows trunk movement"
+    - "walls thick and irregular; asymmetry present"
+    - "clear STOP boundaries respected everywhere"
+  what_failure_looks_like:
+    - "straight tunnels"
+    - "thin walls near live vein"
+    - "outer silhouette altered"
+    - "symmetry or 'manufactured' look"
+
+time_constraints:
+  session_length_minutes: 20-30
+  max_sessions: 2
+  mandatory_rest_days_after: 7-10
+  note: "Stage 2 defines irreversible limits. If unsure, stop early and reassess."
+
+notes_for_infographic_alignment:
+  match_reference_language:
+    key_phrases:
+      - "work from inside outward"
+      - "STOP boundaries"
+      - "keep walls thick and irregular"
+      - "do NOT widen hollow toward live vein"
+      - "do NOT create straight tunnels"
+  visual_elements_to_draw:
+    - "red dashed STOP lines"
+    - "green preserve zones (live vein side)"
+    - "arrows showing internal flow path"
+    - "bridge zones labeled 'leave material here'"
