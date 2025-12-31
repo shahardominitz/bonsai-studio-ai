@@ -1,0 +1,100 @@
+bonsai_studio_ai:
+  manifest_version: "0.1.0"
+  repo_role: "core_knowledge_and_agents"
+  language_primary: "he"
+  audience:
+    - bonsai_hobbyists
+    - advanced_practitioners
+    - workshop_instructors
+  product_goal:
+    - "Centralize bonsai design knowledge + prompt evolution"
+    - "Generate photorealistic visualization prompts (Nano-Banana / Nano-Banana Pro)"
+    - "Convert visualizations into real-world work plans (stages, tools, safety, timing)"
+    - "Evolve into an accessible agent/app for bonsai worldwide"
+
+  pillars:
+    P1_photoreal_fidelity:
+      description: "Outputs must be unmistakably reality-bound and botanically plausible."
+      non_negotiables:
+        - "No invented branches, trunks, foliage, or deadwood not present in references."
+        - "If a single reference image is declared, it is the only source of truth."
+        - "Allowed change: viewpoint/pot tilt ONLY to enhance readability, not to invent structure."
+
+    P2_stage_discipline:
+      description: "No skipping intermediate stages. Risk is controlled by resolution (Stage 1 → 1.5 → 2)."
+      timeboxing:
+        carving_sessions: "20–40 minutes max"
+        rest_intervals_days: "7–14 days between heavy carving sessions"
+      hard_stops:
+        - "Stop if moist/live tissue appears unexpectedly."
+        - "Stop if approaching live vein boundaries."
+        - "Do not touch outer silhouette when the plan is internal hollowing."
+
+    P3_conifer_deadwood_language:
+      description: "Jin & Shari are structural storytelling, not decoration."
+      rules:
+        jin:
+          - "Jin only from existing dead tips/sections."
+          - "Irregular fibers, follow grain, avoid symmetry."
+        shari:
+          - "Follow trunk movement and grain."
+          - "Never widen toward live veins."
+          - "Avoid straight tunnels and mirrored patterns."
+
+  current_modules:
+    knowledge:
+      - "knowledge/project_manifest.yaml"
+      - "knowledge/bonsai_core.yaml (if exists; if not, create next)"
+    prompts:
+      status: "to_be_added"
+      planned:
+        - "prompts/conifers/jin_shari_photoreal_v1.yaml"
+        - "prompts/juniper/kengai_photoreal_v1.yaml"
+        - "prompts/olive/hollow_trunk_infographic_v1.yaml"
+        - "prompts/olive/hollow_trunk_stage_1_5_resolution.yaml"
+    agents:
+      status: "to_be_added"
+      planned:
+        - "agents/bonsai_studio_agent.yaml"
+
+  versioning_system:
+    scheme:
+      - "V{major}.{minor}"
+      - "Add sub-versions for resolution: V1.0, V1.1, V1.5-RESOLUTION, V2.0"
+    prompt_output_contract:
+      must_include:
+        - "Project/Species/Style"
+        - "Stage + Version label"
+        - "Constraints: DO / DO NOT"
+        - "Two separate prompt blocks: Nano-Banana, Nano-Banana Pro"
+      infographic_contract:
+        must_include:
+          - "Tool heads per step"
+          - "Forbidden zones / STOP boundaries"
+          - "Session duration + mandatory rest interval"
+          - "Warnings + what NOT to touch"
+
+  immediate_next_steps:
+    - step: 1
+      action: "Create or confirm knowledge/bonsai_core.yaml as source-of-truth rules"
+    - step: 2
+      action: "Add agents/bonsai_studio_agent.yaml (orchestration agent spec)"
+    - step: 3
+      action: "Add first prompt pack: conifer jin/shari photoreal v1 (strict)"
+    - step: 4
+      action: "Connect repo to GenSpark AI Developer (Existing GitHub Project)"
+    - step: 5
+      action: "Iterate: stage packs + infographic continuity + user flows"
+
+  success_criteria:
+    MVP:
+      - "Given 1 reference image, output photoreal prompt with zero invented elements"
+      - "Given carving reference infographic, generate missing stage panels consistently"
+      - "Produce a staged work plan with rest intervals and tool heads"
+    product:
+      - "Agent that guides users from photos → design → safe plan → visuals"
+      - "Multi-language support (EN/HE) for global community"
+
+  notes:
+    - "This repo is the canonical core. A separate repo may later host the web/app UI."
+    - "Do not rename repo during core formation; preserve history and continuity."
