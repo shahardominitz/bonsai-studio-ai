@@ -1,0 +1,63 @@
+trial_id: tool_trial_03_stage_5_material_finish
+engine: nano_banana_pro
+
+input:
+  type: single_image
+  image_source: user_uploaded_reference
+  tree_type: conifer
+  species_assumption: juniper_like
+  current_state: post_carving_pre_exhibition
+
+workflow_enforcement:
+  apply_stages:
+    - carving_stage_1
+    - carving_stage_2
+    - carving_stage_3
+    - carving_stage_4
+    - carving_stage_5
+  stage_4_policy: execution_only
+  stage_5_policy: visualization_only
+
+material_finishing:
+  deadwood_treatment:
+    lime_sulfur:
+      apply: true
+      intensity: natural_weathered_white
+      variation: uneven
+      constraints:
+        - only_on_existing_jin_and_shari
+        - preserve_live_vein_edges
+        - no uniform bleaching
+  bark_contrast:
+    enhance: subtle
+    preserve_species_texture: true
+
+constraints:
+  strict_validation: true
+  forbid:
+    - new_branches
+    - new_deadwood
+    - silhouette_correction
+    - idealized_foliage_pads
+    - fantasy_or_exhibition_tricks
+
+allowed_adjustments:
+  - refine_existing_deadwood_texture
+  - emphasize natural age and weathering
+  - remove wiring only if already logically removable
+  - slight camera angle correction for trunk readability
+
+render_settings:
+  photorealism_level: maximum
+  lighting: natural_outdoor_daylight
+  background: neutral_non_exhibition
+  mood: mature_weathered_honest
+
+output:
+  - photorealistic_image
+  - validation_notes:
+      include:
+        - stages_applied
+        - material_treatments_used
+        - what_was_not_changed
+        - biological_constraints_detected
