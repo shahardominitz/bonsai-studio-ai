@@ -1,0 +1,54 @@
+trial_id: tool_trial_03_stage_5a_guided
+
+engine: nano_banana_pro
+
+input:
+  type: single_image
+  image_source: user_uploaded_reference
+  tree_type: conifer
+  species_assumption: juniper_like
+  current_state: pre_bonsai_real_material
+
+goal:
+  guided_design_visualization
+
+design_intent:
+  style_target: classical_bonsai_possible
+  cascade_emphasis: only_if_existing
+  maturity_level: achievable_5_to_10_years
+
+constraints:
+  strict_biological_plausibility: true
+  no_new_trunks: true
+  no_new_primary_branches: true
+  no_fantasy_elements: true
+  no_scale_change: true
+
+allowed_refinement:
+  foliage_pad_definition: moderate
+  branch_position_refinement: minor_from_existing
+  deadwood_texture_refinement: subtle_only
+  wiring_cleanup: if_logically_removable
+
+explicitly_allowed:
+  - visual_clarification_of_existing_structure
+  - improved_readability_of_trunk_line
+  - clearer_negative_spaces_if_already_implied
+
+explicitly_forbidden:
+  - idealized_symmetry
+  - textbook_bonsai_silhouette
+  - exhibition_perfection
+
+output:
+  image_count: 1
+  photorealism_level: high
+  background: neutral_non_exhibition
+  lighting: natural_outdoor
+  notes:
+    include_validation_summary: true
+    include_constraints_respected: true
+
+mode:
+  validation_level: guided
+  creativity_lock: partial
