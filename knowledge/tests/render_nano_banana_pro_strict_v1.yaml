@@ -1,0 +1,71 @@
+render_id: nano_banana_pro_strict_v1
+
+engine:
+  name: nano-banana-pro
+  mode: image_to_image
+  strict_validation: true
+
+pro_controls:
+  seed_lock: true
+  seed: 221144            # אפשר לשנות כדי לקבל וריאציות מבוקרות
+  reference_fidelity: 0.95 # 0.90–0.98: גבוה = נאמנות גבוהה לרפרנס
+  structure_preserve: high # high/medium/low
+  denoise_strength: 0.28   # 0.18–0.35: נמוך = פחות “המצאות”, יותר נאמנות
+  detail_boost: medium     # low/medium/high
+  texture_realism: high
+  sharpness: natural       # natural/crisp
+  upscaler: pro            # אם קיים אצלך
+
+input:
+  reference_image: user_uploaded
+  image_count: 1
+
+workflow_binding:
+  apply_stages:
+    - carving_stage_1
+    - carving_stage_1_5
+    - carving_stage_2
+    - carving_stage_3
+    - carving_stage_4
+    - carving_stage_5
+
+constraints:
+  forbid:
+    - new_branches
+    - new_foliage
+    - new_trunk_sections
+    - new_deadwood_origins
+    - silhouette_improvement
+    - idealized_pad_creation
+    - fantasy_elements
+    - pot_change
+    - environment_change_to_studio
+
+allowed_adjustments:
+  camera_angle: slight_only_if_clarity_improves
+  deadwood_texture: refine_existing_only
+  wire_removal: only_if_logically_removable
+
+output:
+  image:
+    type: photorealistic_visualization
+    count: 1
+  validation_report:
+    include:
+      - stages_applied
+      - untouched_elements
+      - unavoidable_refinements
+      - biological_constraints
+      - pro_params_used
+
+render_settings:
+  lighting: natural_outdoor_daylight
+  background: neutral_real_environment
+  realism_level: maximum
+  mood: raw_honest_non_exhibition
+
+failure_conditions:
+  - visible_design_upgrade
+  - invented_structure
+  - mismatch_with_reference
+  - studio_background
