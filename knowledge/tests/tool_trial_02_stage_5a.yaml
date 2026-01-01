@@ -1,0 +1,61 @@
+trial_id: tool_trial_02_stage_5a
+linked_workflow_stage: carving_stage_5
+trial_purpose: >
+  Validate photorealistic visualization output fidelity
+  when applying carving_stage_5 rules on a real pre-bonsai reference.
+
+input:
+  type: single_image
+  image_source: user_uploaded_reference
+  tree_type: conifer
+  species_assumption: juniper_like
+  tree_state: pre_bonsai_real_material
+
+workflow_enforcement:
+  apply_stages:
+    - carving_stage_1
+    - carving_stage_1_5
+    - carving_stage_2
+    - carving_stage_3
+    - carving_stage_4
+    - carving_stage_5
+  stage_4_rule: execution_only_no_design_decisions
+  stage_5_rule: visualization_only_no_design_upgrade
+
+constraints:
+  forbid:
+    - new_branches
+    - new_foliage_pads
+    - invented_deadwood
+    - symmetry_optimization
+    - fantasy_or_exhibition_styling
+  require:
+    - biological_plausibility
+    - continuous_live_veins
+    - deadwood_origin_from_existing_structure
+
+allowed_adjustments:
+  - slight_camera_angle_change_if_narrative_clarity_improves
+  - subtle_deadwood_texture_refinement_only
+  - wire_removal_only_if_logically_complete
+
+render_settings:
+  photorealism_level: maximum
+  lighting: natural_outdoor_daylight
+  background: neutral_non_studio
+  mood: honest_raw_unfinished
+
+output:
+  deliverables:
+    - single_photorealistic_image
+    - validation_notes
+  validation_notes_requirements:
+    - stages_applied_confirmation
+    - untouched_elements_list
+    - unavoidable_refinements_explained
+    - constraints_encountered
+
+mode:
+  strict_validation
+  no_fantasy
+  no_design_upgrade
