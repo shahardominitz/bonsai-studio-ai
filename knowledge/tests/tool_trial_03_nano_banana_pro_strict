@@ -1,0 +1,69 @@
+trial_id: tool_trial_03_nano_banana_pro_strict
+engine: nano_banana_pro
+
+input:
+  type: single_image
+  image_source: user_uploaded_reference
+  tree_type: conifer
+  species_assumption: juniper_like
+  material_state: pre_bonsai_real
+  wiring_present: true
+  deadwood_present: partial_existing
+
+validation_mode:
+  strict: true
+  seed_lock: true
+  deterministic_output: true
+
+workflow_enforcement:
+  apply_stages:
+    - carving_stage_1
+    - carving_stage_2
+    - carving_stage_3
+    - carving_stage_4
+    - carving_stage_5
+
+stage_constraints:
+  carving_stage_4:
+    execution_only: true
+    forbid_design_changes: true
+  carving_stage_5:
+    visualization_only: true
+    forbid_idealization: true
+
+hard_constraints:
+  forbid:
+    - new_branches
+    - new_trunks
+    - new_foliage_mass
+    - invented_deadwood
+    - symmetry_correction
+    - fantasy_elements
+    - exhibition_polish
+  require:
+    - continuous_live_veins
+    - biologically_plausible_growth
+    - mechanical_feasibility
+
+allowed_adjustments:
+  - minor_camera_angle_shift
+  - deadwood_texture_refinement_only
+  - wire_removal_if_logically_finished
+
+output:
+  images:
+    count: 1
+    photorealism: maximum
+    lighting: natural_outdoor
+    background: neutral_real_world
+  report:
+    include:
+      - stages_applied
+      - unchanged_elements
+      - unavoidable_refinements
+      - biological_constraints_detected
+
+success_criteria:
+  - output_differs_from_input
+  - no_new_structure_detected
+  - result_feels_inevitable_not_designed
