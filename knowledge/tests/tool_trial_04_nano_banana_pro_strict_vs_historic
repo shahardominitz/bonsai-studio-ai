@@ -1,0 +1,50 @@
+trial_id: tool_trial_04_nano_banana_pro_strict_vs_historic
+
+engine: nano_banana_pro
+
+input:
+  type: single_image
+  image_source: user_uploaded_reference
+  tree_type: conifer
+  species_assumption: juniper_like
+  material_state: pre_bonsai_real
+
+workflow:
+  apply_stages:
+    - carving_stage_1
+    - carving_stage_2
+    - carving_stage_3
+    - carving_stage_4
+    - carving_stage_5
+
+mode:
+  validation: strict
+  design_freeze: true
+  no_design_upgrade: true
+  seed_lock: true
+
+comparison_reference:
+  allow_visual_similarity_to_historic_prompt: true
+  forbid_structural_similarity_if_not_present: true
+
+allowed_adjustments:
+  - camera_angle_minor
+  - deadwood_texture_refinement_existing_only
+  - wiring_removal_if_logically_removable
+
+forbidden:
+  - new_branches
+  - new_foliage_pads
+  - symmetry_correction
+  - fantasy_deadwood
+  - age_or_scale_change
+
+output:
+  images: 1
+  include_validation_notes: true
+
+render:
+  photorealism_level: maximum
+  lighting: natural_outdoor
+  background: neutral_non_exhibition
+  mood: raw_real_unfinished
