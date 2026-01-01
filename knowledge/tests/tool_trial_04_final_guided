@@ -1,0 +1,68 @@
+trial_id: tool_trial_04_final_guided
+engine: nano_banana_pro
+
+input:
+  type: single_image
+  image_source: user_uploaded_reference
+  reference_policy: preserve_identity_strong
+
+workflow:
+  enforce_stages: true
+  stages:
+    - carving_stage_1
+    - carving_stage_2
+    - carving_stage_3
+    - carving_stage_4
+    - carving_stage_5
+
+control_mode:
+  name: guided_control
+  strict_validation: false
+  biological_plausibility: high
+  topology_lock: true
+  silhouette_freedom: medium
+  foliage_pad_refinement: medium_high
+  deadwood_refinement: high
+  wire_visibility: reduce_if_removable
+  seed_lock: true
+
+constraints:
+  must_preserve:
+    - trunk_line_and_base_position
+    - all_primary_branches_that_exist
+    - branch_count (no_new_branches)
+    - species_and_scale
+    - live_vein_continuity
+  forbidden:
+    - new_trunk
+    - new_branches
+    - fantasy_elements
+    - extreme_symmetry_perfecting
+    - changing_pot_style_to_unrealistic
+  allowed:
+    - adjust_camera_angle_slightly
+    - compress_internodes_visually (without adding growth)
+    - redistribute_existing_foliage_mass
+    - refine_deadwood_grain_and_depth
+    - lime_sulfur_on_deadwood_only
+
+render:
+  photorealism_level: maximum
+  lighting: natural_outdoor_daylight_soft
+  background: neutral_simple_non_studio
+  presentation: exhibition_like_but_honest
+  camera:
+    angle: eye_level
+    focal_length_mm: 70
+    depth_of_field: moderate
+
+outputs:
+  - photorealistic_image
+  - validation_notes
+
+validation_notes_format:
+  include:
+    - stages_applied
+    - what_was_locked
+    - what_was_refined
+    - any_constraint_warnings
