@@ -1,0 +1,43 @@
+prompt_id: conifer_best_possible_v1
+engine: nano_banana_pro
+
+intent:
+  description: >
+    Produce a hyper-photorealistic "best possible bonsai" visualization
+    of the exact pre-bonsai tree shown in the single reference image,
+    revealing the highest realistic bonsai potential latent in the existing material.
+
+input:
+  type: single_image
+  tree_type: conifer
+  species_hint: juniper_like
+
+core_principles:
+  - no_invented_structure
+  - biological_plausibility
+  - continuity_of_live_veins
+  - realism_over_idealization
+
+controlled_freedom:
+  allowed:
+    - refine_flow_if_implied
+    - enhance_deadwood_texture
+    - realistic_lime_sulfur_effect
+    - clarify_branch_hierarchy
+    - minor_camera_angle_adjustment
+  forbidden:
+    - new_branches
+    - new_foliage_masses
+    - fantasy_elements
+    - perfect_symmetry
+    - competition_cliches
+
+presentation:
+  style: high_level_bonsai_presentation
+  lighting: natural_outdoor_or_soft_neutral
+  mood: calm_refined_honest
+  background: neutral_non_distracting
+
+output:
+  type: single_image
+  photorealism: maximum
